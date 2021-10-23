@@ -1,0 +1,14 @@
+version: 2.1
+
+orbs:
+  docker: circleci/docker@1.7.0
+
+workflows:
+  build-and-publish-docker-image:
+    jobs:
+      - docker/publish:
+          image: $DOCKERHUB_PROJECT_REPO/$DOCKERHUB_PROJECT_NAME
+          tag: latest
+          filters:
+            branches:
+              only: master
