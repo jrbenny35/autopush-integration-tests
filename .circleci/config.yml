@@ -11,4 +11,4 @@ workflows:
           tag: latest
           filters:
             branches:
-              only: master
+              only: main
